@@ -1,10 +1,12 @@
 # Lean Proofs — The Non-Locality of Extendability
 
-Formal Lean 4 proofs for the principal results in:
+Machine-checked Lean 4 proofs for
 
 **"The Non-Locality of Extendability: An Impossibility Theorem for Bounded Information Systems, with Applications to Generative Sequential Systems"**
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.19687799.svg)](https://doi.org/10.5281/zenodo.19687799)
 
-Shawn Kevin Jason — Independent Researcher, Las Vegas, NV
+Author
+Shawn Kevin Jason — Independent Researcher, Las Vegas, NV ORCID: 0009-0003-9208-1556
 
 ---
 
