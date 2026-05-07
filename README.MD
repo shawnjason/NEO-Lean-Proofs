@@ -19,7 +19,7 @@ ORCID: [![ORCID iD](https://orcid.org/sites/default/files/images/orcid_16x16.png
 
 ## What This Repository Contains
 
-Seven standalone Lean 4 proof files covering the principal formal results of the paper. The proofs split into three groups: a **forward-indistinguishable divergence** group containing the load-bearing kernel lemma and its horizon non-convergence corollary; a **structural lemmas** group covering the arithmetic core of the forced-inconsistency construction, admissible-set monotonicity, and the participation invariance underlying the depletion-boundary argument; and a **defensive distinctions** group establishing through concrete witnesses that NEO is not reducible to POMDP-style partial observability or to viability-based formulations.
+Eight standalone Lean 4 proof files covering the principal formal results of the paper. The proofs split into three groups: a **forward-indistinguishable divergence** group containing the load-bearing kernel lemma, its horizon non-convergence corollary, and the policy-adaptive adversary construction showing any deterministic forward-local policy can be driven into non-extendable commitment; a **structural lemmas** group covering the arithmetic core of the forced-inconsistency construction, admissible-set monotonicity, and the participation invariance underlying the depletion-boundary argument; and a **defensive distinctions** group establishing through concrete witnesses that NEO is not reducible to POMDP-style partial observability or to viability-based formulations.
 
 Each file is independent and verifies against the current Mathlib release.
 
@@ -34,6 +34,9 @@ The load-bearing kernel of the impossibility argument. Two prefixes share an ide
 
 **`036_horizon_nonconvergence.lean`** — Corollary 7 (Non-Convergence of Horizon)
 For every horizon `h`, a separating pair exists at depth `h+1`: two states with identical bounded horizon projections that differ in extendability can be constructed at any horizon depth. No finite evaluation horizon eliminates the failure class.
+
+**`034_policy_adaptive_adversary.lean`** — Lemma 5 (Policy-Adaptive Adversary)
+For any deterministic forward-local policy, there exists an admissible environment in which the policy is driven into non-extendable commitment. The adversary exploits observational equivalence (from the divergence witness, 031) and determinism: the policy produces the same action for two observationally equivalent states, but in one state that action forecloses all completions. Formalizes the one-step construction; block concatenation for arbitrarily many commitments follows by iteration.
 
 ### Structural Lemmas
 
@@ -62,6 +65,7 @@ Concrete witness: there exist partial trajectories where the current state is in
 |---|---|---|
 | Lemma 2 (Forward-Indistinguishable Divergence) | `031_extendability_indistinguishability.lean` | `extendability_indistinguishability` |
 | Corollary 7 (Non-Convergence of Horizon) | `036_horizon_nonconvergence.lean` | `horizon_nonconvergence` |
+| Lemma 5 (Policy-Adaptive Adversary) | `034_policy_adaptive_adversary.lean` | `deterministic_same_action`, `policy_adaptive_adversary` |
 | Participation Invariance | `039_participation_invariance.lean` | `participation_invariance`, `participation_invariance_singleton` |
 | Forced Inconsistency Arithmetic Core | `046_forced_inconsistency.lean` | `forced_inconsistency`, `admissible_action_preserved` |
 | Admissible-Set Monotone Refinement | `047_admissible_set_monotone_discrete.lean` | `admissible_set_monotone`, `admissible_set_strict_decrease` |
